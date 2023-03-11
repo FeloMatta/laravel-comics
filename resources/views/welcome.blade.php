@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.main-layout')
 
-        <title>Laravel 9 + Bootstrap Template</title>
+@section('pageTitle') Home | Laravel Comics @endsection
 
-        {{-- Includiamo gli assets con la direttiva @vite --}}
-        @vite('resources/js/app.js')
-    </head>
-    <body>
-
-        <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{{ Vite::asset('resources/img/laravel.png') }}" alt="">
-
-                                <h1 class="card-title">Laravel 9 + Bootstrap Template</h1>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+@section('pageContent')
+    <div class="jumbo"></div>
+    <div class="content">
+        <div class="container">
+            <div class="title-box">
+                <h2>CURRENT SERIES</h2>
             </div>
-        </main>
+            <div class="card-box">
+                @foreach ($comics as $card)
+                    <div class="card">
+                        <div class="img-box">
+                            <img src="{{ $card['thumb'] }}" alt="{{ $card['title'] }}">
+                        </div>
+                        <h4>{{ $card['title'] }}</h4>
+                    </div>
+                @endforeach
 
-    </body>
-</html>
+            </div>
+            <button>LOAD MORE</button>
+        </div>
+    </div>
+@endsection

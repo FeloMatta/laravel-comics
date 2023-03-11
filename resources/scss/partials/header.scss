@@ -1,0 +1,79 @@
+header {
+    .blue-bar {
+        padding-block: 0.5rem;
+        background-color: $dc-blue;
+        .container {
+            color: white;
+            text-align: end;
+        }
+        a {
+            padding-inline: 1rem;
+            font-size: 0.8rem;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .main-bar {
+        background-color: white;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 120px;
+        }//container
+        .logo-box {
+            padding: 1rem 0;
+            height: 100%;
+            img {
+                height: 100%;
+            }
+        }//logo-box
+        .navbar {
+            display: flex;
+            align-items: center;
+            color: $nq-black;
+            ul {
+                display: flex;
+                list-style: none;
+                a {
+                    display: inline-block;
+                    padding: 0 1rem;
+                    height: 120px;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    line-height: 120px;
+                    &.active {
+                        color: $dc-blue;
+                        box-shadow: inset 0px -5px 0px 0px $dc-blue;
+                    }
+                    &:hover {
+                        color: $dc-blue;
+                    }
+                }//a
+            }//ul
+            .search-box {
+                display: flex;
+                align-items: center;
+                margin-left: 2rem;
+                width: 150px;
+                text-align: end;
+                border-bottom: 2px solid $dc-blue;
+                input {
+                    flex-grow: 1;
+                    padding: 0.5rem;
+                    min-width: 100px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    border: none;
+                    outline: none;
+                    &::placeholder {
+                        color: $nq-black;
+                        text-align: end;
+                    }
+                }
+            }
+        }//navbar
+    }//main-bar
+}//header

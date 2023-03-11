@@ -1,20 +1,54 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
 
-.row {
-    > * {
-        height: 100vh;
+@import "./partials/variables.scss";
+@import "./partials/header";
+@import "./partials/main";
+@import "./partials/footer";
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+//RESET
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        color: lightcoral;
-        background-color: aquamarine;
-        background-image: url('../img/laravel.png');
-        background-size: 50px 50px;
+//CONTAINER
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+//LINK & BUTTONS
+a {
+    text-decoration: none;
+    color: inherit;
+    &.button {
+        display: inline-block;
+        padding: 1rem;
+        color: white;
+        text-transform: uppercase;
+        border: 2px solid $dc-blue;
+        &:hover {
+            background-color: $dc-blue;
+        }
     }
 }
 
-img {
-    max-height: 150px;
+button {
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: $dc-blue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: $dc-blue;
+        background-color: white;
+    }
+}
+
+input {
+    font-family: inherit;
 }
